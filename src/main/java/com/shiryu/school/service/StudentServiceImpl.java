@@ -58,7 +58,7 @@ public class StudentServiceImpl implements StudentService {
                 .orElseThrow(() -> new ResourceNotFoundException("Student not found: " + id));
         
         // GDPR MAGIC: We don't delete, we anonymize!
-        student.anonymize(); 
+        student.anonymize();
         studentRepository.save(student);
     }
 }
